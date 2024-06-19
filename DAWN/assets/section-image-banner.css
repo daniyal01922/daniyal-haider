@@ -37,7 +37,7 @@
   .banner--content-align-left.banner--desktop-transparent .banner__box,
   .banner--content-align-right.banner--desktop-transparent .banner__box,
   .banner--medium.banner--desktop-transparent .banner__box {
-    max-width: 68rem;
+    max-width: 0rem;
   }
 }
 
@@ -447,6 +447,29 @@
   gap: 1rem;
   max-width: 45rem;
   word-break: break-word;
+}
+
+.banner__buttons .button--primary {
+  border: none;
+  display: block;
+  background: linear-gradient(to right, #FFF544  50%, black 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+  cursor:pointer;
+}
+.banner__buttons .button--primary:hover {
+  background-position: left bottom;
+}
+.banner__buttons a:hover  {
+  color:black !important;
+}
+.banner__buttons a  {
+  color: white !important;
+  padding-top: 15px;
+  --border-offset:0;
+  min-width: 215px;
+  text-align: center;
 }
 
 @media screen and (max-width: 749px) {

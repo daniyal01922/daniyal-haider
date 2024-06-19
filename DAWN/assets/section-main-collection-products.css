@@ -1,0 +1,191 @@
+.collection-page-items {
+    margin: 50px 0;
+  }
+  .collection-page-items input#quantity {
+    display: none;
+  }
+  .okeReviews-reviewsSummary.js-okeReviews-reviewsSummary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+  .bundler--product-cards {
+    display: grid;
+    width: 100%;
+    align-items: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-row-gap: 20px;
+    grid-column-gap: 40px;
+  }
+  
+  .bundler--product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .bundler--product-card .button {
+    border-radius: 0;
+    width: 100%;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 0;
+    bottom: 196px;
+    background-color: transparent; 
+    z-index: 999999;
+  }
+  
+  .bundler--product-card-image-wrap {
+    background: #f9fafc;
+    text-align: center;
+  }
+  
+  .bundler--product-card-image {
+    width: 100%;
+    margin: 0 auto 10px;
+    object-fit: contain;
+    transition: 0.25s ease-in-out;
+    margin-bottom: 2px;
+  }
+  
+  .bundler--product-card-bottom {
+    padding-top: 5px;
+  }
+  
+  .bundler--product-card-info {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+  .bundler--product-card-info p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: flex-end;
+  }
+  .bundler--product-card-info .regular_price {
+    color: #dd6050;
+    margin: 0;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .bundler--product-card-info .sale_price {
+    text-decoration: line-through;
+  }
+  .saving p {
+    margin: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bundler--product-card-info h4 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  .bundler--product-card-info h4 a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+  }
+  .okeReviews .okeReviews-reviewsSummary-ratingCount {
+    padding-top: 3px;
+  }
+  .landing-collection .bundler--product-cards {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .landing-collection .bundler--product-card{
+    max-width: 415px;
+  }
+  .page-hair-care-landing .landing-collection .bundler--product-card {
+    max-width: 350px;
+  }
+  .bundler--product-card-image
+  {
+    height:auto;
+  }
+  @media only screen and (min-width: 567px) {
+    .bundler--product-card-info h4 {
+    font-size: 14px;
+  }
+  .bundler--product-card-bottom {
+      padding-top: 0;
+  }å
+    .bundler--product-card-review {
+      padding-bottom: 6px;
+  }
+    .bundler--product-cards {
+    grid-template-columns: repeat(auto-fit, minmax(261px, 1fr));
+  }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .checkboxes {
+      margin-top: 0;
+    }
+    .landing-collection .bundler--product-cards {
+      flex-direction: column;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .landing-collection .bundler--product-cards
+    {
+      flex-direction: column;
+    }
+    .landing-collection .bundler--product-card 
+    {
+      min-width: 653px;
+    }
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .bundler--product
+    {
+      max-width: 415px;
+      min-width: 260px;
+    }
+  } 
+  @media only screen and (max-width: 767px)
+  {
+    .landing-collection .bundler--product-card
+    {
+       min-width: 0px;
+    }
+    .bundler--product-card-image
+    {
+      object-fit: contain;
+      background:white;
+    }
+    .bundler--product
+    {
+      width: 40%;
+      background:white;
+    }
+    .bundler--product-card .button
+    {
+      bottom:76px;
+    }
+    .landing-collection .bundler--product-cards
+    {
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media only screen and (max-width: 330px)
+  {
+    .bundler--product 
+    {
+      min-width: 275px;
+    }
+  }

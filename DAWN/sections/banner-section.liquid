@@ -1,0 +1,300 @@
+<style>
+  body {
+      margin: 0;
+  }
+  .outer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      background-color:{{ section.settings.color_bg }};
+      {% comment %} #F5F5F5;  {% endcomment %}
+      padding: 5px 20px;
+  }
+ .rimage__image
+ {
+  width:20px;
+ }
+
+  .heading {
+      font-size: 16px;
+      font-weight: 600;
+      text-align: start;
+      text-indent: 0px;
+      list-style: 16px;
+      text-decoration: none solid rgba(255, 255, 255, 0.9);
+  }
+  .text {
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      text-align: start;
+      text-indent: 0px;
+      list-style: 16px;
+      text-decoration: none solid rgba(255, 255, 255, 0.9);
+  }
+  .buttons {
+      border: none;
+      display: block;
+      line-height: 41px;
+      padding: 0 20px;
+      background: linear-gradient(to right, black 50%, #FFF544 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: all .5s ease-out;
+      cursor:pointer;
+  }
+  .buttons:hover {
+      background-position: left bottom;
+  }
+  .buttons:hover .text-button {
+      color: white;
+  }
+  .text-button {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      text-align: start;
+      text-indent: 0px;
+      color: black;
+      transition: all .6s ease-out;
+      display: block;
+  }
+
+  .text-button:hover {
+      color: white;
+  }
+
+  @media (max-width: 767px) {
+    .text-button{
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+      .heading {
+          font-size: 12px;
+      }
+      .text {
+          font-size: 10px;
+      }
+      .buttons {
+          font-size: 10px;
+          line-height: 30px;
+          padding: 0 10px;
+      }
+  }
+
+  @media (max-width: 420px) {
+      .outer {
+          padding: 5px 8px;
+      }
+      .heading {
+          font-size: 10px;
+      }
+      .text {
+          font-size: 8px;
+      }
+      .buttons {
+          font-size: 8px;
+          line-height: 27px;
+          padding: 0 10px;
+      }
+  }
+</style>
+
+<div class="outer">
+  <p class="heading">{{ section.settings.text_heading }}</p>
+  <p class="text">
+    {{ section.settings.text_para }}
+  </p>
+  <div class="buttons">
+    <div class="text-button">
+      {{ section.settings.btn_text }}
+      <img
+        src="{{ section.settings.image_2 | img_url: '300' }}"
+        width="{{section.settings.image_2.width }}"
+        widths="200,375"
+        ,
+        height="{{section.settings.image_2.height }}"
+        alt="{{ section.settings.image_2.alt | escape }}"
+        class="rimage__image"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_heading",
+      "label": "Add heading text"
+    },
+    {
+      "type": "text",
+      "id": "text_para",
+      "label": "Add center text"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Add button text"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Add background color"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Add button color"
+    },
+    {
+      "type": "color",
+      "id": "btn_hover",
+      "label": "Add Hover color"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Image banner",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Heading size H2"
+            },
+            {
+              "value": "h1",
+              "label": "Heading size H1"
+            },
+            {
+              "value": "h0",
+              "label": "Heading size H0"
+            }
+          ],
+          "default": "h1",
+          "label": "Heading size"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Give customers details about the banner image(s) or content on the template.",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "Caption with letter spacing"
+            }
+          ],
+          "default": "body",
+          "label": "Text style"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "Button label 1",
+          "info": "Label for the first button"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Button link 1"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_1",
+          "default": false,
+          "label": "Secondary style for button 1"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label",
+          "label": "Button label 2",
+          "info": "Label for the second button"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Button link 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_2",
+          "default": false,
+          "label": "Secondary style for button 2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "banner",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "buttons"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
